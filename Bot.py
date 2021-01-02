@@ -8,19 +8,19 @@ with open('purchase_record.csv','r') as file:
     csv_reader = csv.reader(file, delimiter = ',')
     for i in csv_reader:
         content.append(i)
-print(content)
-stock_price = random.randint(50,100)
-stock_held = 0
-print(stock_price)
 
+stock_price = random.randint(50, 100)
+stock_held_sup = 0
 stock_held = int(content[-1][2])
+print(stock_held)
+print(stock_price)
 if stock_price >= 70:
     if stock_held == 0:
         stock_held +=1
         content.append([stock_price,'Bought',stock_held])
         print('Bought')
     else:
-        print('You already have stock')
+        print('You already have stock.')
 
 if stock_price <70:
     if stock_held == 1:
